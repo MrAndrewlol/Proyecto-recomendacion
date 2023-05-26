@@ -1,6 +1,21 @@
+
+<script>
+  function getcorreo() {
+  var x = document.getElementById("correo").value;
+  document.getElementById("delco").innerHTML = x;
+}
+</script>
+
+
+
+
 <!DOCTYPE html>
 <html>
 <title>Spotfix</title>
+
+<h1><a href="registros.html" style="color: white;">Registrarse</a></h1>
+
+
 
 <body>
   <link rel="stylesheet" href="Style.css">
@@ -8,19 +23,15 @@
 <img src="spotfix.png" alt="spotfix.com" style="width:auto; display: block; margin-left: auto; margin-right: auto;">
 
 <div class="form-center">
-  <form action="Prince.html">
+  <form action=>
     <label>Email</label><br>
-    <input type="email" name="email" placeholder="Email"><br><br>
-    <label>Contraseña</label>
+    <input type="email" name="email" placeholder="Email" id="correo"><br><br>
+    <label>Contraseña</label><br>
     <input type="password" name="password" placeholder="Contraseña"><br><br>
-    <input type="submit" value="Iniciar Sesion" >
+    <button type="submit" value="Iniciar Sesion" onclick="getcorreo()"></button>>
   </form>		
 </div>
-  
-  <p>Click the "Submit" button and the form-data will be sent to a page on the 
-  server called "action_page.php".</p>
-
 
 </body>
 
-</html>>
+</html>
