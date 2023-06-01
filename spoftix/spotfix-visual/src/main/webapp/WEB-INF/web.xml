@@ -4,4 +4,23 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+
+  <servlet>
+  <servlet-name>funcion</servlet-name>
+  <servlet-class>mainser.mains</servlet-class>
+  </servlet>
+
+
+  <servlet-mapping>
+  <servlet-name>funcion</servlet-name>
+  <url-pattern>/UWU</url-pattern>
+
+  </servlet-mapping>
+
+
+
+  </servlet>
+
+
 </web-app>
+
