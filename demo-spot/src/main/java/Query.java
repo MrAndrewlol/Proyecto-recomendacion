@@ -13,9 +13,9 @@ public class Query {
         LinkedList<String> rec2 = new LinkedList<String>();
 
         // Configurar la conexiÃ³n con la base de datos Neo4j
-        String uri = "bolt://localhost:7687";
+        String uri = "neo4j+s://81c426cd.databases.neo4j.io";
         String username = "neo4j";
-        String password = "sips-lumber-projectile";
+        String password = "SlJtv-qWUuE0XjlaRcfEv7ns-AMdK4QVDj9OFj6JS7M";
 
         // Crear una instancia de Driver para establecer la conexiÃ³n
         try (Driver driver = GraphDatabase.driver(uri, AuthTokens.basic(username, password))) {
