@@ -104,7 +104,16 @@
           <option value="reggaeton">reggaeton</option>
           <option value="k-pop">k-pop</option>
         </select>
-        <br><br><br>
+
+         <!-- Agregar o eliminar artista (opcional) -->
+         <p>Agrega o Eliminar<p>
+         <label for="fname">Artista a Agregar o a Eliminar</label>
+        <input type="text" id="fname" name="fname"><br><br>
+        <input type="checkbox" id="agregar" name="agregar" value="agregar">
+        <label for="agregar"> Agregar al artista</label><br>
+        <input type="checkbox" id="eliminar" name="eliminar" value="eliminar">
+        <label for="eliminar">Eliminar al artista</label><br>
+        <br>
         <input type="submit" value="Submit">
       </form>
     </div>
