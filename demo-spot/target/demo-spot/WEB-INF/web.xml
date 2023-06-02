@@ -6,7 +6,7 @@
   <display-name>Archetype Created Web Application</display-name>
   <display-name>demo-spot</display-name>
   <welcome-file-list>
-  <welcome-file>index.jsp</welcome-file>
+  <welcome-file>Pagina Principal.html</welcome-file>
   </welcome-file-list>
   
   <servlet>
