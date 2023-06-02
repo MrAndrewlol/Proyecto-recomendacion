@@ -17,18 +17,16 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
     String genre1 = request.getParameter("genero1");
     String genre2 = request.getParameter("genero2");
     String genre3 = request.getParameter("genero3");
-    String agregar = request.getParameter("agregar"); //variables a utilizar para agregar y eliminar artista del Query
-    String eliminar =  request.getParameter("eliminar");
-    String artista =  request.getParameter("fname");
-    
+    String decision = request.getParameter("artista"); //variables a utilizar para agregar y eliminar artista del Query
+    String artista =  request.getParameter("fname");    
 
     if(genre2 == ""){
-        genre2 = request.getParameter("genero1");
+        genre2 = null;
         out.println("Debido a que no hay genero 2 se establece al genero 1 como prioridad");
 
     }
     if(genre3 == ""){
-        genre3 = request.getParameter("genero1");
+        genre3 =  null;
         out.println("Debido a que no hay genero 3 se establece al genero 1 como prioridad");
 
     }
@@ -39,19 +37,16 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
     }
 
 
-    if(agregar != null){
+    if(decision == "agregar"){
         //nombre del motodo agregar como queries.search(genre1, genre2, genre3)
+        Query.add(artista);
 
-
-        out.println("el artista " + artista + " Ha sido agregdo a base de datos");
     }
 
-    if(eliminar != null){
+    if(decision == "eliminar"){
         //nombre del motodo agregar como queries.search(genre1, genre2, genre3)
+        Query.delete(artista);
 
-
-
-        out.println("el artista " + artista + " Ha sido quitado de la base de datos");
     }
 
 

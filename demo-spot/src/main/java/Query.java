@@ -185,4 +185,32 @@ public class Query {
         }
         return rec2;
     }
+
+    public static  void add(String nombre){
+        Driver driver = GraphDatabase.driver("neo4j+s://81c426cd.databases.neo4j.io",AuthTokens.basic("neo4j","SlJtv-qWUuE0XjlaRcfEv7ns-AMdK4QVDj9OFj6JS7M"));
+        Session session = driver.session();
+
+        String cypherAdd = "CREATE ("+nombre.strip()+":Person {Name: "+nombre+"})";
+
+        session.run(cypherAdd);
+    }
+
+    public static void delete(String nombre){
+        Driver driver = GraphDatabase.driver("neo4j+s://81c426cd.databases.neo4j.io",AuthTokens.basic("neo4j","SlJtv-qWUuE0XjlaRcfEv7ns-AMdK4QVDj9OFj6JS7M"));
+        Session session = driver.session();
+        String cypherDelete = "MATCH (n:Person {id: $id}) DELETE n";
+
+        String cypherID = "MATCH (nPerson {propiedad: $valor}) RETURN id(n) AS nodeId";
+
+        String propiedadBusqueda = "Name";
+        String valorBusqueda = nombre;
+
+        Record result = session.run(cypherID, Values.parameters("propiedad",propiedadBusqueda, "valor", valorBusqueda)).single();
+
+        Value nodeIdValue = result.get("nodeId");
+        long nodeId = nodeIdValue.asLong();
+
+        session.run(cypherDelete, Values.parameters("id", nodeId));
+
+    }
 }

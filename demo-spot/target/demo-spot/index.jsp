@@ -107,12 +107,13 @@
 
          <!-- Agregar o eliminar artista (opcional) -->
          <p>Agrega o Eliminar<p>
-         <label for="fname">Artista a Agregar o a Eliminar</label>
-        <input type="text" id="fname" name="fname"><br><br>
-        <input type="checkbox" id="agregar" name="agregar" value="agregar">
-        <label for="agregar"> Agregar al artista</label><br>
-        <input type="checkbox" id="eliminar" name="eliminar" value="eliminar">
-        <label for="eliminar">Eliminar al artista</label><br>
+          <label for="fname">Artista a Agregar o a Eliminar</label>
+         <input type="text" id="fname" name="fname"><br><br>
+         <label for="artista">Desea Eliminar o Agregar:</label>
+         <select name="artista" id="artista">
+           <option value="agregar">Agregar</option>
+           <option value="eliminar">Eliminar</option>
+         </select>
         <br>
         <input type="submit" value="Submit">
       </form>
